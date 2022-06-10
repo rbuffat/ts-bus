@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "prepare": "npm run build",
     "build": "tsc",
     "test": "jest --coverage"
   },
