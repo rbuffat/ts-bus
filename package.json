@@ -11,22 +11,23 @@
     "url": "https://github.com/ryardley/ts-bus"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+    "react": "^18.2.0"
   },
   "dependencies": {
-    "eventemitter2": "^5.0.1"
+    "eventemitter2": "^6.4.9"
   },
   "devDependencies": {
-    "@testing-library/react-hooks": "^1.1.0",
-    "@types/jest": "^24.0.15",
-    "@types/node": "^12.6.8",
-    "@types/react": "^16.8.19",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.6.3",
+    "@types/react": "^18.2.0",
+    "@types/react-test-renderer": "^18.0.2",
     "codecov": "^3.6.5",
-    "jest": "^24.8.0",
-    "react": "^17.0.0",
-    "react-test-renderer": "^17.0.0",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.1"
+    "jest": "^29.7.0",
+    "react": "^18.2.0",
+    "react-test-renderer": "^18.2.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
   },
   "keywords": [
     "redux",
@@ -43,7 +44,7 @@
     "ts-bus"
   ],
   "resolutions": {
-    "**/lodash": "4.17.13",
+    "**/lodash": "4.17.21",
     "**/lodash.template": "4.5.0"
   },
   "files": [

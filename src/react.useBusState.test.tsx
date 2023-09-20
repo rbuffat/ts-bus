@@ -1,4 +1,4 @@
-import { act, renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react";
 import React from "react";
 import { createEventDefinition } from "./EventBus";
 import { BusProvider, stateSubscriber, useBus, useBusState } from "./react";
@@ -10,9 +10,7 @@ it("should not subscribe without unsubscribing (useBusState)", () => {
 
   // run once to subscribe to bus
   const hook = renderHook(() => useBusState(0, incrementEvent), {
-    wrapper: ({ children }: { children?: React.ReactNode }) => (
-      <BusProvider value={mockBus}>{children}</BusProvider>
-    )
+    wrapper: ({ children }: { children?: React.ReactNode }) => <BusProvider value={mockBus}>{children}</BusProvider>,
   });
 
   hook.unmount();
@@ -28,11 +26,11 @@ it("should update state (options configuration)", () => {
     () =>
       useBusState.configure(incrementEvent, {
         subscriber: (dispatch, bus) => {
-          return bus.subscribe("counter.**", v => dispatch(v.payload));
-        }
+          return bus.subscribe("counter.**", (v) => dispatch(v.payload));
+        },
       })(0),
     {
-      wrapper
+      wrapper,
     }
   );
 
@@ -63,10 +61,10 @@ it("should update state by subscribing to multiple events", () => {
   const { result } = renderHook(
     () =>
       useBusState.configure(posNeg, {
-        subscriber: stateSubscriber("positive", "negative")
+        subscriber: stateSubscriber("positive", "negative"),
       })(0),
     {
-      wrapper
+      wrapper,
     }
   );
 
@@ -83,7 +81,7 @@ it("should update state", () => {
   const incrementEvent = createEventDefinition<number>()("increment");
 
   const { result } = renderHook(() => useBusState(0, incrementEvent), {
-    wrapper
+    wrapper,
   });
 
   expect(result.current[0]).toBe(0);
@@ -104,10 +102,10 @@ describe("when the dispatchEvent is not the same as the subscribe event", () => 
     const { result } = renderHook(
       () =>
         useBusState.configure(three, {
-          subscriber: stateSubscriber("one", "two")
+          subscriber: stateSubscriber("one", "two"),
         })(0),
       {
-        wrapper
+        wrapper,
       }
     );
 

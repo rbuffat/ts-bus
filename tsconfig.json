@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "outDir": "dist",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -14,6 +17,10 @@
     "declaration": true,
     "sourceMap": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

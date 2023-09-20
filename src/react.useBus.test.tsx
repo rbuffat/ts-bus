@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react";
 import { useBus } from "./react";
 import { bus, wrapper } from "./testhelpers";
 
